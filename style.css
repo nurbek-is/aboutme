@@ -1,0 +1,24 @@
+.main.h1 {
+  font-size: 48px;
+}
+#something {
+  /* This is how we select an element by ID */
+}
+p:hover {
+color:pink;
+}
+
+a:link {
+
+}
+
+a:visited {
+
+}
+
+<!--<style>
+  * {color: blue;}
+  body {
+    font-family: cursive;
+  }
+</style>-->
