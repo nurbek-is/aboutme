@@ -1,19 +1,26 @@
 .main.h1 {
-  font-size: 48px;
+  font-size: 60px;
+  font-family: inherit;
+  text-align: center;
+  background-color: green;
 }
-#something {
-  /* This is how we select an element by ID */
+#bio {
+  background-color: pink;
+  text-align: center;
+  text-decoration: red;
+
 }
 p:hover {
 color:pink;
 }
 
 a:link {
-
+color: green;
 }
 
 a:visited {
-
+font-style: normal;
+font-family: sans-serif;
 }
 
 
