@@ -38,15 +38,15 @@ var guessLeft = '[' + guess + ' Guess(es) Left]';
 
 while (guess > 0) {
   if ( parseInt(question5)=== 7) {
-    alert ('You got it right');
+    alert ('You got it Right');
     correctGuess+=1;
     guess=0;
   }  else if (question5 > 7) {
-    question5= prompt ('Your guess is too high, Guess again ' + guessLeft)
+    question5= prompt ('Your guess is too High, Guess again ' + guessLeft)
     guess-=1;
     var guessLeft = '[' + guess + ' Guess(es) Left]';
   } else if (question5 < 7) {
-    question5 = prompt ('Your guess is too low, Guess again ' + guessLeft)
+    question5 = prompt ('Your guess is too Low, Guess again ' + guessLeft)
     guess-=1;
     var guessLeft = '[' + guess + ' Guess(es) Left]';
   } else {
