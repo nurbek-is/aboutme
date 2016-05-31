@@ -1,4 +1,5 @@
-.main.h1 {
+p {font-size: 1.5em;}
+.class on {
   font-size: 60px;
   font-family: inherit;
   text-align: center;
@@ -19,7 +20,7 @@ color: green;
 }
 
 a:visited {
-font-style: normal;
+font-style: oblique;
 font-family: sans-serif;
 }
 
