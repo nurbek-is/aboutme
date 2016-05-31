@@ -1,4 +1,22 @@
-p {font-size: 1.5em;}
+p {font-size: 1.5em;
+  position: relative;
+  top:10px;
+  left:100px;
+  width: 600px;}
+body {
+  width: 1400px;
+  font-family: Arial, Verdana, sans-serif;
+  color: #FF6666;
+}
+
+h1 {
+background-color: #C0C0C0;
+padding: 15px;
+margin: 0px;*/
+}
+a> img {
+float: right;
+}
 .class on {
   font-size: 60px;
   font-family: inherit;
