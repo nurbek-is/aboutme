@@ -26,32 +26,34 @@ for (var i = 0; i < questions.length; i++) {
   response=(prompt(question)).toLowerCase();
   if (response===answer) {
     correctGuess+= 1;
-  } // if user's  response matches to the correct answer,added to the counter
-  //   correct.push (question);
-  // } else {
-  //   wrong.push (question);
-  // }
-// }
-// function=buildList (arr) {
-//   var listHTML="<ol>";
-//   for (var i=0; i <arr.length; i+=1) {
-//     listHTML+= '<li>' + arr[i] + '</li>';
-//   }
-//
-//   listHTML+='</ol>';
-//   return listHTML;
-//   results += '<h2>You got these questions correct:</h2>';
-//   results += buildList(correct);
-//   results += '<h2>You got these questions wrong:</h2>';
-//   results += buildList(wrong);
-//   displayResults(results);
-// }
+  }
+}
+// if user's  response matches to the correct answer,added to the counter
+    correct.push (question);
+  } else {
+    wrong.push (question);
+  }
+}
+function=buildList (arr) {
+  var listHTML="<ol>";
+  for (var i=0; i <arr.length; i+=1) {
+    listHTML+= '<li>' + arr[i] + '</li>';
+  }
+
+  listHTML+='</ol>';
+  return listHTML;
+  results += '<h2>You got these questions correct:</h2>';
+  results += buildList(correct);
+  results += '<h2>You got these questions wrong:</h2>';
+  results += buildList(wrong);
+  displayResults(results);
+}
 
 var question5 = prompt ('Guess what is my favorite number between 1 & 9');
 var guess= 3
 var guessLeft = '[' + guess + ' Guess(es) Left]';
 
-while (guess > 0) {       //  while loop to keep prompting 4 times
+while (guess > 0) {       //  while loop to keep prompting Q's 4 times
   if ( parseInt(question5)=== 6) {
     alert ('You got it Right');
     correctGuess+=1;
@@ -109,4 +111,4 @@ while (guess > 0) {       //  while loop to keep prompting 4 times
  {
   results += "<strong> and You Earned No Medal</strong></p>";
   displayResults(results);
-}}
+}
