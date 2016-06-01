@@ -16,8 +16,8 @@ var question;
 var answer;
 var response;
 var results;
-var correct= []; // empty array to include list questions got right
-var wrong= [];   // empty array to include list questions got wrong
+// var correct= []; // empty array to include list questions got right
+// var wrong= [];   // empty array to include list questions got wrong
 
 for (var i = 0; i < questions.length; i++) {
   question= questions[i][0];// accessing the question/1st index i.e 0
@@ -26,10 +26,10 @@ for (var i = 0; i < questions.length; i++) {
   response=(prompt(question)).toLowerCase();
   if (response===answer) {
     correctGuess+= 1;   // if user's  response matches to the correct answer,added to the counter
-    correct.push (question);
-  } else {
-    wrong.push (question);
-  }
+  //   correct.push (question);
+  // } else {
+  //   wrong.push (question);
+  // }
 }
 // function=buildList (arr) {
 //   var listHTML="<ol>";
@@ -82,13 +82,19 @@ while (guess > 0) {       //  while loop to keep prompting 4 times
     alert('You guessed it wrong');
     }
 
+//  THis is new method from class
+// var allStates = '';
+//    for (var i = 0; i < states.length; i++) {
+//        allStates += states[i] + ' ';
+//    }
+//    alert("Correct answers: " + allStates);
 
  function displayResults (message) {
    var printHTML= document.getElementById('outcome');
  printHTML.innerHTML=message;
   }
 
-  }
+
  var results= '<p>You got ' + correctGuess + ' question(s) right';
  if (correctGuess >= 4) { results += "<strong> and You Earned a Gold Medal</strong></p>"; displayResults(results);
   }
@@ -102,4 +108,4 @@ while (guess > 0) {       //  while loop to keep prompting 4 times
  {
   results += "<strong> and You Earned No Medal</strong></p>";
   displayResults(results);
- }
+}}
