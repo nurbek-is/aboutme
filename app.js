@@ -25,12 +25,13 @@ for (var i = 0; i < questions.length; i++) {
 
   response=(prompt(question)).toLowerCase();
   if (response===answer) {
-    correctGuess+= 1;   // if user's  response matches to the correct answer,added to the counter
+    correctGuess+= 1;
+  } // if user's  response matches to the correct answer,added to the counter
   //   correct.push (question);
   // } else {
   //   wrong.push (question);
   // }
-}
+// }
 // function=buildList (arr) {
 //   var listHTML="<ol>";
 //   for (var i=0; i <arr.length; i+=1) {
