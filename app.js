@@ -14,6 +14,8 @@ var question;
 var answer;
 var response;
 var results;
+var correct = []; // empty array to include list questions got right
+var wrong = [];   // empty array to include list questions got wrong
 
 for (var i = 0; i < questions.length; i++) {
   question= questions[i][0];// accessing the question/1st index i.e 0
@@ -21,21 +23,25 @@ for (var i = 0; i < questions.length; i++) {
 
   response=(prompt(question)).toLowerCase();
   if (response===answer) {
-    correctGuess+= 1;   // if user's  response matches to the correct answer,added to the counter
+    alert('You got it right');
+    correctGuess+= 1;
+    correct.push (question);
+  } else {
+    alert('You got it wrong');
+    wrong.push (question);
   }
 }
-
-
 
 var question5 = prompt ('Guess what is my favorite number between 1 & 9');
 var guess= 3
 var guessLeft = '[' + guess + ' Guess(es) Left]';
 
-while (guess > 0) {
+while (guess > 0) {       //  while loop to keep prompting Q's 4 times
   if ( parseInt(question5)=== 6) {
     alert ('You got it Right');
     correctGuess+=1;
     guess=0;
+    correct.push (question);
   }  else if (question5 > 6) {
     question5= prompt ('Your guess is too High, Guess again ' + guessLeft)
     guess-=1;
@@ -46,21 +52,25 @@ while (guess > 0) {
     var guessLeft = '[' + guess + ' Guess(es) Left]';
   } else {
     alert ('Sorry, You got it wrong!?');
+    wrong.push (question);
   }
   }
+
   var statesLived=['montana','california', 'florida', 'oregon'];
-  var answerWasFound=false; // this var helps to alert to You guessed it wrong when it is switched to false
+  var answerWasFound=false; // this var helps to alert- You guessed it wrong when it is switched to false
   var question6= prompt ('What states have I lived in besides Washington?');
     for (var i = 0; i < statesLived.length; i++) {
     if (question6.toLowerCase() === statesLived[i]) {
       alert('You guessed it right');
       answerWasFound=true;
       correctGuess+= 1;
+      correct.push (question);
       break;
     }
   }
     if (answerWasFound===false) {
     alert('You guessed it wrong');
+    wrong.push (question);
     }
 
 
@@ -68,6 +78,8 @@ while (guess > 0) {
    var printHTML= document.getElementById('outcome');
  printHTML.innerHTML=message;
   }
+
+
  var results= '<p>You got ' + correctGuess + ' question(s) right';
  if (correctGuess >= 4) { results += "<strong> and You Earned a Gold Medal</strong></p>"; displayResults(results);
   }
@@ -80,5 +92,21 @@ while (guess > 0) {
  else
  {
   results += "<strong> and You Earned No Medal</strong></p>";
+
+}
+function buildList (arr) {
+  var listHTML="<ol>";
+  for (var i=0; i <arr.length; i+=1) {
+    listHTML+= '<li>' + arr[i] + '</li>';
+
+  }
+  listHTML+='</ol>';
+  return listHTML;
+}
+
+  //return listHTML;
+  results += '<h2>You got these questions correct:</h2>';
+  results += buildList(correct);
+  results += '<h2>You got these questions wrong:</h2>';
+  results += buildList(wrong);
   displayResults(results);
- }
