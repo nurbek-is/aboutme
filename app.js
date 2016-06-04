@@ -1,5 +1,6 @@
 var userInput= prompt("Welcome to my App, What is Your Name?");
-var welcome= alert ('Hello ' + userInput + ',  let\'s play guessing game, if you guess correctly you will get a medal');
+// var welcome=
+alert ('Hello ' + userInput + ',  let\'s play guessing game, if you guess correctly you will get a medal');
 
 //Two dimensional array with text question and answer
 var questions = [
@@ -17,7 +18,8 @@ var results;
 var correct = []; // empty array to include list questions got right
 var wrong = [];   // empty array to include list questions got wrong
 
-for (var i = 0; i < questions.length; i++) {
+function textQuestion () {
+  for (var i = 0; i < questions.length; i++) {
   question= questions[i][0];// accessing the question/1st index i.e 0
   answer=questions [i][1]; //accessing the answer/2nd index i.e 1
 
@@ -31,17 +33,20 @@ for (var i = 0; i < questions.length; i++) {
     wrong.push (question);
   }
 }
+}
+textQuestion ();
 
 var question5 = prompt ('Guess what is my favorite number between 1 & 9');
 var guess= 3
 var guessLeft = '[' + guess + ' Guess(es) Left]';
 
+function numberQuestion ()  {
 while (guess > 0) {       //  while loop to keep prompting Q's 4 times
   if ( parseInt(question5)=== 6) {
     alert ('You got it Right');
     correctGuess+=1;
     guess=0;
-    correct.push (question);
+
   }  else if (question5 > 6) {
     question5= prompt ('Your guess is too High, Guess again ' + guessLeft)
     guess-=1;
@@ -52,27 +57,28 @@ while (guess > 0) {       //  while loop to keep prompting Q's 4 times
     var guessLeft = '[' + guess + ' Guess(es) Left]';
   } else {
     alert ('Sorry, You got it wrong!?');
-    wrong.push (question);
   }
   }
+}
+numberQuestion ();
 
   var statesLived=['montana','california', 'florida', 'oregon'];
   var answerWasFound=false; // this var helps to alert- You guessed it wrong when it is switched to false
   var question6= prompt ('What states have I lived in besides Washington?');
-    for (var i = 0; i < statesLived.length; i++) {
+    function stateQuestion () {
+      for (var i = 0; i < statesLived.length; i++) {
     if (question6.toLowerCase() === statesLived[i]) {
       alert('You guessed it right');
       answerWasFound=true;
       correctGuess+= 1;
-      correct.push (question);
       break;
     }
   }
     if (answerWasFound===false) {
     alert('You guessed it wrong');
-    wrong.push (question);
     }
-
+}
+stateQuestion ();
 
  function displayResults (message) {
    var printHTML= document.getElementById('outcome');
