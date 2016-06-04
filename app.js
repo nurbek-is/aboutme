@@ -48,7 +48,6 @@ while (guess > 0) {       //  while loop to keep prompting Q's 4 times
     correctGuess+=1;
     //correct.push (question);
     guess=0;
-
   }  else if (question5 > 6) {
     question5= prompt ('Your guess is too High, Guess again ' + guessLeft)
     guess-=1;
